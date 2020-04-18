@@ -11,35 +11,65 @@ const testMenu = {
     title: 'components',
     icon: 'component'
   },
-  children: [{ // 二级菜单
-    path: 'tree',
-    component: () => import('@/views/testMenu/tree/index'),
-    name: 'treename',
-    meta: {
-      title: 'rolePermission',
-      icon: 'component',
-      roles: ['admin'] // 权限
+  children: [
+	  { // 二级菜单
+      path: 'tree',
+      component: () => import('@/views/testMenu/tree/index'),
+      name: 'treename',
+      meta: {
+        title: 'rolePermission',
+        icon: 'component',
+        roles: ['admin'] // 权限
+      },
+      children: [{ // 三级菜单
+        path: 'tree-1',
+        component: () => import('@/views/testMenu/tree/tree-1'),
+        name: 'tree-1-name',
+        meta: {
+          title: 'tree-1-title',
+          icon: 'component',
+          roles: ['admin'] // 权限
+        }
+      }, { // 三级菜单
+        path: 'tree-2',
+        component: () => import('@/views/testMenu/tree/tree-2'),
+        name: 'tree-2-name',
+        meta: {
+          title: 'tree-2-title',
+          icon: 'component',
+          roles: ['admin'] // 权限
+        }
+      }]
     },
-    children: [{ // 三级菜单
-      path: 'tree-1',
-      component: () => import('@/views/testMenu/tree/tree-1'),
-      name: 'tree-1-name',
+    { // 二级菜单
+      path: 'from',
+      component: () => import('@/views/testMenu/from/index'),
+      name: 'fromname',
       meta: {
-        title: 'tree-1-title',
+        title: 'fromtitle',
         icon: 'component',
         roles: ['admin'] // 权限
-      }
-    }, { // 三级菜单
-      path: 'tree-2',
-      component: () => import('@/views/testMenu/tree/tree-2'),
-      name: 'tree-2-name',
-      meta: {
-        title: 'tree-2-title',
-        icon: 'component',
-        roles: ['admin'] // 权限
-      }
+      },
+      children: [{ // 三级菜单
+        path: 'from-1',
+        component: () => import('@/views/testMenu/from/from-1'),
+        name: 'from-1-name',
+        meta: {
+          title: 'from-1-title',
+          icon: 'component',
+          roles: ['admin'] // 权限
+        }
+      }, { // 三级菜单
+        path: 'from-1',
+        component: () => import('@/views/testMenu/from/from-1'),
+        name: 'from-1-name',
+        meta: {
+          title: 'from-1-title',
+          icon: 'component',
+          roles: ['admin'] // 权限
+        }
+      }]
     }]
-  }]
 }
 
 export default testMenu
