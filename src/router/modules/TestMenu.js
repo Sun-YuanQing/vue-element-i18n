@@ -11,23 +11,32 @@ const testMenu = {
     title: 'components',
     icon: 'component'
   },
-  children: [{  //二级菜单
+  children: [{ // 二级菜单
     path: 'tree',
-    component: Layout,
+    component: () => import('@/views/testMenu/tree/index'),
     name: 'treename',
     meta: {
       title: 'rolePermission',
       icon: 'component',
-      roles: ['admin']  //权限
+      roles: ['admin'] // 权限
     },
-     children: [{  //三级菜单
+    children: [{ // 三级菜单
       path: 'tree-1',
-      component:  () => import('@/views/testMenu/tree/tree-1'),
+      component: () => import('@/views/testMenu/tree/tree-1'),
       name: 'tree-1-name',
       meta: {
         title: 'tree-1-title',
         icon: 'component',
-        roles: ['admin']  //权限
+        roles: ['admin'] // 权限
+      }
+    }, { // 三级菜单
+      path: 'tree-2',
+      component: () => import('@/views/testMenu/tree/tree-2'),
+      name: 'tree-2-name',
+      meta: {
+        title: 'tree-2-title',
+        icon: 'component',
+        roles: ['admin'] // 权限
       }
     }]
   }]
