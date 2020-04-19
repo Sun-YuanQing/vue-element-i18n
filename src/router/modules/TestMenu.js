@@ -59,15 +59,6 @@ const testMenu = {
           icon: 'component',
           roles: ['admin'] // 权限
         }
-      }, { // 三级菜单
-        path: 'from-1',
-        component: () => import('@/views/testMenu/from/from-1'),
-        name: 'from-1-name',
-        meta: {
-          title: 'from-1-title',
-          icon: 'component',
-          roles: ['admin'] // 权限
-        }
       }]
     }]
 }
