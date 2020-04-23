@@ -1,7 +1,7 @@
 <template>
   <div style="padding:30px;">
     <p>使用 scoped slot</p>
-    <el-tree :data="data" show-checkbox node-key="id" default-expand-all :expand-on-click-node="false">
+    <el-tree :data="data" show-checkbox node-key="id" default-expand-all :props="defaultProps" :expand-on-click-node="false">
       <span slot-scope="{ node, data }" class="custom-tree-node">
         <span>{{ node.label }}</span>
         <span>
@@ -72,6 +72,10 @@ export default {
     return {
       routes: [],
       rolesList: [],
+	    defaultProps: {
+        children: 'children',
+        label: 'label'
+      },
       data: JSON.parse(JSON.stringify(data))
     }
   },
